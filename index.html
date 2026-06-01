@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panoptic Intelligence — Data-driven strategies for modern communications</title>
+<meta name="description" content="Data systems, AI automation, performance media and capture surfaces for PR agencies, in-house comms desks and founders.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: #FFFFFF;
+  color: #0B1B45;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* === NAV === */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 56px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(11, 27, 69, 0.08);
+}
+.wordmark { display: flex; align-items: center; gap: 14px; }
+.wm-dot { width: 7px; height: 7px; background: #0F52BA; border-radius: 50%; flex-shrink: 0; }
+.wm-stack { display: flex; flex-direction: column; line-height: 1; }
+.wm-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 26px;
+  color: #0B1B45;
+}
+.wm-sub {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(11, 27, 69, 0.55);
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+.nav-link {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(11, 27, 69, 0.65);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.nav-link:hover { color: #0F52BA; }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #0B1B45;
+  padding: 12px 22px;
+  border: 1px solid rgba(11, 27, 69, 0.22);
+  border-radius: 999px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.nav-cta:hover {
+  background: #0F52BA;
+  color: #FFFFFF;
+  border-color: #0F52BA;
+}
+
+/* === LAYOUT === */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #0F52BA;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.display-1, .display-2, .display-3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.014em;
+  color: #0B1B45;
+}
+.display-1 em, .display-2 em, .display-3 em {
+  font-style: italic;
+  color: #0F52BA;
+  font-weight: 400;
+}
+
+/* === HERO === */
+.hero {
+  padding: 140px 0 120px;
+  text-align: center;
+  border-bottom: 1px solid rgba(11, 27, 69, 0.08);
+}
+.display-1 {
+  font-size: 96px;
+  line-height: 1.02;
+  max-width: 920px;
+  margin: 0 auto 48px;
+}
+.services-row {
+  display: flex;
+  justify-content: center;
+  gap: 44px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 22px;
+  color: rgba(11, 27, 69, 0.7);
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+}
+.services-row span { display: inline-flex; align-items: center; }
+.services-row span::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 1px;
+  background: rgba(11, 27, 69, 0.4);
+  margin-right: 14px;
+}
+.scroll-hint {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.5;
+}
+.scroll-line {
+  width: 1px;
+  height: 36px;
+  background: rgba(11, 27, 69, 0.4);
+  animation: scroll-line 2.6s ease-in-out infinite;
+  transform-origin: top;
+}
+@keyframes scroll-line {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.3; }
+  50% { transform: scaleY(1); opacity: 0.7; }
+}
+.scroll-text {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(11, 27, 69, 0.45);
+  font-weight: 500;
+}
+
+/* === CHAPTER === */
+.chapter {
+  padding: 140px 0;
+  border-bottom: 1px solid rgba(11, 27, 69, 0.08);
+}
+.chapter-header {
+  margin-bottom: 88px;
+  max-width: 880px;
+}
+.chapter-num {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(11, 27, 69, 0.4);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 20px;
+}
+.display-2 {
+  font-size: 72px;
+  line-height: 1.04;
+  margin-top: 14px;
+}
+.chapter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+  align-items: start;
+}
+.chapter-grid.reverse .chapter-text { order: 2; }
+.chapter-grid.reverse .chapter-visual { order: 1; }
+
+.body-text {
+  font-size: 17px;
+  line-height: 1.72;
+  color: rgba(11, 27, 69, 0.65);
+  margin-bottom: 22px;
+}
+.body-text:last-of-type { margin-bottom: 0; }
+
+.services-list {
+  list-style: none;
+  margin-top: 44px;
+  border-top: 1px solid rgba(11, 27, 69, 0.1);
+}
+.services-list li {
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(11, 27, 69, 0.78);
+  padding: 18px 0 18px 28px;
+  position: relative;
+  border-bottom: 1px solid rgba(11, 27, 69, 0.07);
+}
+.services-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.6em;
+  width: 12px;
+  height: 1px;
+  background: #0F52BA;
+}
+
+.pull-quote {
+  margin: 96px auto 0;
+  padding: 48px 24px 0;
+  border-top: 1px solid rgba(11, 27, 69, 0.12);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1.4;
+  color: rgba(11, 27, 69, 0.62);
+  text-align: center;
+  max-width: 840px;
+}
+
+.chapter-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+}
+.chapter-visual svg { width: 100%; height: auto; max-width: 480px; display: block; }
+.chapter-visual.square svg { max-width: 380px; }
+
+/* === CLOSING CTA === */
+.closing {
+  padding: 200px 0 160px;
+  text-align: center;
+  border-bottom: 1px solid rgba(11, 27, 69, 0.08);
+}
+.display-3 {
+  font-size: 88px;
+  line-height: 1.02;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+.closing-body {
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(11, 27, 69, 0.65);
+  margin: 0 auto 56px;
+  max-width: 580px;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #0F52BA;
+  color: #FFFFFF;
+  padding: 22px 40px;
+  font-size: 13px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.cta-button:hover {
+  background: #0B1B45;
+  transform: translateY(-2px);
+}
+
+/* === FOOTER === */
+.footer {
+  padding: 40px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.footer-tag {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(11, 27, 69, 0.4);
+  font-weight: 500;
+}
+
+/* === FADE-IN === */
+.fade {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1.1s ease, transform 1.1s ease;
+}
+.fade.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .display-1 { font-size: 72px; }
+  .display-2 { font-size: 56px; }
+  .display-3 { font-size: 68px; }
+  .chapter-grid { gap: 64px; }
+  .container { padding: 0 40px; }
+  .footer { padding: 40px; }
+  .nav { padding: 22px 40px; }
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 18px 24px; }
+  .nav-links { display: none; }
+  .container { padding: 0 24px; }
+  .footer { padding: 32px 24px; }
+  .hero { padding: 96px 0 80px; }
+  .display-1 { font-size: 48px; max-width: 100%; }
+  .services-row { font-size: 17px; gap: 18px; flex-direction: column; align-items: flex-start; text-align: left; max-width: 280px; margin: 0 auto 56px; }
+  .chapter { padding: 88px 0; }
+  .chapter-header { margin-bottom: 56px; }
+  .display-2 { font-size: 40px; }
+  .chapter-grid { grid-template-columns: 1fr; gap: 56px; }
+  .chapter-grid.reverse .chapter-text { order: 1; }
+  .chapter-grid.reverse .chapter-visual { order: 2; }
+  .pull-quote { font-size: 22px; margin-top: 56px; padding-top: 32px; }
+  .closing { padding: 120px 0 96px; }
+  .display-3 { font-size: 48px; }
+  .closing-body { font-size: 16px; }
+  .cta-button { padding: 18px 32px; font-size: 12px; }
+  .body-text { font-size: 16px; }
+  .wm-name { font-size: 22px; }
+  .wm-sub { font-size: 10.5px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#top" class="wordmark">
+    <span class="wm-dot"></span>
+    <div class="wm-stack">
+      <span class="wm-name">Panoptic</span>
+      <span class="wm-sub">Intelligence</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#chapter-01" class="nav-link">Data</a>
+    <a href="#chapter-02" class="nav-link">AI</a>
+    <a href="#chapter-03" class="nav-link">Media</a>
+    <a href="#chapter-04" class="nav-link">Presence</a>
+  </div>
+  <a class="nav-cta" href="https://wa.me/5515988211373?text=Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20para%20ag%C3%AAncias%20de%20RP.%20">Start a brief →</a>
+</nav>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow fade">Our vision</p>
+      <h1 class="display-1 fade">Data-driven strategies for modern <em>communications</em>.</h1>
+      <div class="services-row fade">
+        <span>Data systems</span>
+        <span>AI automation</span>
+        <span>Performance media</span>
+        <span>Capture surfaces</span>
+      </div>
+      <div class="scroll-hint fade">
+        <div class="scroll-line"></div>
+        <div class="scroll-text">Scroll</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="chapter-01">
+    <div class="container">
+      <header class="chapter-header fade">
+        <span class="chapter-num">Chapter 01</span>
+        <p class="eyebrow">Data Intelligence</p>
+        <h2 class="display-2">Numbers that <em>earn</em> coverage.</h2>
+      </header>
+
+      <div class="chapter-grid fade">
+        <div class="chapter-text">
+          <p class="body-text">Raw data, refined into the statistical rationale behind a release. Original numbers turn a pitch into a story, and give journalists a reason to call back.</p>
+          <p class="body-text">Multiple streams of qualitative and quantitative data, processed into statistical and probabilistic readings. Graphic demonstrations and opinion-trend factors translate the work into something the agency's client can finally read, the clearest measure of campaign success.</p>
+          <ul class="services-list">
+            <li>Qualitative and quantitative data processing</li>
+            <li>Statistical and probabilistic modelling</li>
+            <li>Graphic demonstrations and opinion-trend factors</li>
+            <li>Clarity reporting for agency clients</li>
+          </ul>
+        </div>
+
+        <div class="chapter-visual">
+          <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <defs>
+              <path id="p1" d="M 18 36 Q 90 36 156 90"/>
+              <path id="p2" d="M 18 90 L 156 90"/>
+              <path id="p3" d="M 18 144 Q 90 144 156 90"/>
+              <path id="p4" d="M 164 90 Q 230 36 290 34"/>
+              <path id="p5" d="M 164 90 L 290 90"/>
+              <path id="p6" d="M 164 90 Q 230 144 290 146"/>
+            </defs>
+            <use href="#p1" stroke="rgba(11,27,69,0.16)" fill="none" stroke-width="0.5"/>
+            <use href="#p2" stroke="rgba(11,27,69,0.16)" fill="none" stroke-width="0.5"/>
+            <use href="#p3" stroke="rgba(11,27,69,0.16)" fill="none" stroke-width="0.5"/>
+            <use href="#p4" stroke="rgba(11,27,69,0.16)" fill="none" stroke-width="0.5"/>
+            <use href="#p5" stroke="rgba(11,27,69,0.16)" fill="none" stroke-width="0.5"/>
+            <use href="#p6" stroke="rgba(11,27,69,0.16)" fill="none" stroke-width="0.5"/>
+
+            <circle cx="18" cy="36" r="2.8" fill="#0F52BA"/>
+            <circle cx="18" cy="90" r="2.8" fill="#0F52BA"/>
+            <circle cx="18" cy="144" r="2.8" fill="#0F52BA"/>
+
+            <circle r="1.8" fill="#0F52BA">
+              <animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.8s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="1.8" fill="#0F52BA">
+              <animateMotion dur="2.8s" begin="0.93s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.8s" begin="0.93s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="1.8" fill="#0F52BA">
+              <animateMotion dur="2.8s" begin="1.86s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.8s" begin="1.86s" repeatCount="indefinite"/>
+            </circle>
+
+            <circle cx="160" cy="90" r="22" fill="none" stroke="#0F52BA" stroke-width="0.5" opacity="0.25">
+              <animate attributeName="r" values="22;32;22" dur="2.8s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.3;0;0.3" dur="2.8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="160" cy="90" r="14" fill="none" stroke="#0F52BA" stroke-width="0.7" opacity="0.5">
+              <animate attributeName="r" values="14;19;14" dur="2.8s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.55;0.15;0.55" dur="2.8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="160" cy="90" r="5.5" fill="#0F52BA"/>
+
+            <circle r="1.8" fill="#0F52BA">
+              <animateMotion dur="2.8s" begin="1.4s" repeatCount="indefinite"><mpath href="#p4"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.8s" begin="1.4s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="1.8" fill="#0F52BA">
+              <animateMotion dur="2.8s" begin="2.33s" repeatCount="indefinite"><mpath href="#p5"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.8s" begin="2.33s" repeatCount="indefinite"/>
+            </circle>
+            <circle r="1.8" fill="#0F52BA">
+              <animateMotion dur="2.8s" begin="0.47s" repeatCount="indefinite"><mpath href="#p6"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="2.8s" begin="0.47s" repeatCount="indefinite"/>
+            </circle>
+
+            <g transform="translate(295, 22)">
+              <rect x="0" y="6" width="2.5" height="6" fill="#0F52BA"/>
+              <rect x="4.5" y="2" width="2.5" height="10" fill="#0F52BA"/>
+              <rect x="9" y="8" width="2.5" height="4" fill="#0F52BA"/>
+              <rect x="13.5" y="0" width="2.5" height="12" fill="#0F52BA"/>
+              <rect x="18" y="4" width="2.5" height="8" fill="#0F52BA"/>
+              <line x1="0" y1="14" x2="22" y2="14" stroke="rgba(11,27,69,0.25)" stroke-width="0.5"/>
+            </g>
+            <polyline points="295,90 300,86 305,88 310,82 315,84" fill="none" stroke="#0F52BA" stroke-width="1"/>
+            <line x1="295" y1="94" x2="315" y2="94" stroke="rgba(11,27,69,0.25)" stroke-width="0.5"/>
+            <circle cx="302" cy="146" r="7" fill="none" stroke="rgba(11,27,69,0.16)" stroke-width="1.5"/>
+            <circle cx="302" cy="146" r="7" fill="none" stroke="#0F52BA" stroke-width="1.5" stroke-dasharray="29 44" transform="rotate(-90 302 146)"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="pull-quote fade">Proprietary research is the most reliable way to make a release inevitable.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="chapter-02">
+    <div class="container">
+      <header class="chapter-header fade">
+        <span class="chapter-num">Chapter 02</span>
+        <p class="eyebrow">AI Automation</p>
+        <h2 class="display-2">Custom models, <em>sharper</em> teams.</h2>
+      </header>
+
+      <div class="chapter-grid reverse fade">
+        <div class="chapter-text">
+          <p class="body-text">Custom-trained AI models for the work that decides outcomes, pre-analysing award entries, scoring submissions, classifying coverage at scale.</p>
+          <p class="body-text">Quiet automation runs the rest, removing the repetitive process behind every campaign so the team's hours go to judgement, not workflow.</p>
+          <ul class="services-list">
+            <li>Custom-trained models for client deliverables</li>
+            <li>Award and submission pre-analysis</li>
+            <li>Coverage classification and scoring</li>
+            <li>Internal process automation for the team</li>
+          </ul>
+        </div>
+
+        <div class="chapter-visual">
+          <svg viewBox="0 0 280 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <defs>
+              <path id="aip" d="M 24 100 L 80 50 L 140 70 L 200 50 L 240 100 L 260 100"/>
+            </defs>
+            <g stroke="rgba(11,27,69,0.13)" stroke-width="0.5" fill="none">
+              <line x1="24" y1="100" x2="80" y2="50"/>
+              <line x1="24" y1="100" x2="80" y2="100"/>
+              <line x1="24" y1="100" x2="80" y2="150"/>
+              <line x1="80" y1="50" x2="140" y2="70"/>
+              <line x1="80" y1="100" x2="140" y2="70"/>
+              <line x1="80" y1="100" x2="140" y2="120"/>
+              <line x1="80" y1="150" x2="140" y2="120"/>
+              <line x1="140" y1="70" x2="200" y2="50"/>
+              <line x1="140" y1="70" x2="200" y2="100"/>
+              <line x1="140" y1="120" x2="200" y2="100"/>
+              <line x1="140" y1="120" x2="200" y2="150"/>
+              <line x1="200" y1="50" x2="240" y2="100"/>
+              <line x1="200" y1="100" x2="240" y2="100"/>
+              <line x1="200" y1="150" x2="240" y2="100"/>
+              <line x1="240" y1="100" x2="260" y2="100"/>
+            </g>
+            <use href="#aip" stroke="#0F52BA" stroke-width="0.8" fill="none" opacity="0.5"/>
+            <circle cx="24" cy="100" r="5" fill="#0F52BA"/>
+            <circle cx="80" cy="50" r="3.5" fill="#0F52BA"/>
+            <circle cx="80" cy="100" r="2.5" fill="none" stroke="rgba(11,27,69,0.4)" stroke-width="0.7"/>
+            <circle cx="80" cy="150" r="2.5" fill="none" stroke="rgba(11,27,69,0.4)" stroke-width="0.7"/>
+            <circle cx="140" cy="70" r="3.5" fill="#0F52BA"/>
+            <circle cx="140" cy="120" r="2.5" fill="none" stroke="rgba(11,27,69,0.4)" stroke-width="0.7"/>
+            <circle cx="200" cy="50" r="3.5" fill="#0F52BA"/>
+            <circle cx="200" cy="100" r="2.5" fill="none" stroke="rgba(11,27,69,0.4)" stroke-width="0.7"/>
+            <circle cx="200" cy="150" r="2.5" fill="none" stroke="rgba(11,27,69,0.4)" stroke-width="0.7"/>
+            <circle cx="240" cy="100" r="3.5" fill="#0F52BA"/>
+            <circle cx="260" cy="100" r="5" fill="#0F52BA"/>
+            <circle r="3" fill="#0B1B45">
+              <animateMotion dur="3s" repeatCount="indefinite"><mpath href="#aip"/></animateMotion>
+              <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3s" repeatCount="indefinite"/>
+            </circle>
+          </svg>
+        </div>
+      </div>
+
+      <p class="pull-quote fade">Tools that handle the volume, so the team handles the judgement.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="chapter-03">
+    <div class="container">
+      <header class="chapter-header fade">
+        <span class="chapter-num">Chapter 03</span>
+        <p class="eyebrow">Paid Media</p>
+        <h2 class="display-2">Earned media, <em>amplified</em>.</h2>
+      </header>
+
+      <div class="chapter-grid fade">
+        <div class="chapter-text">
+          <p class="body-text">Meta Ads built on organic-style creative, precision audiences and full-funnel measurement via Conversion API and Pixel, campaigns travel further, with proof at every step.</p>
+          <ul class="services-list">
+            <li>Meta Ads campaign architecture</li>
+            <li>Organic-style creative direction</li>
+            <li>Audience segmentation and targeting</li>
+            <li>Conversion API and Pixel setup</li>
+          </ul>
+        </div>
+
+        <div class="chapter-visual square">
+          <svg viewBox="0 0 260 260" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <line x1="130" y1="20" x2="130" y2="240" stroke="rgba(11,27,69,0.07)" stroke-width="0.5"/>
+            <line x1="20" y1="130" x2="240" y2="130" stroke="rgba(11,27,69,0.07)" stroke-width="0.5"/>
+            <circle cx="130" cy="130" r="40" fill="none" stroke="rgba(11,27,69,0.1)" stroke-width="0.5"/>
+            <circle cx="130" cy="130" r="75" fill="none" stroke="rgba(11,27,69,0.08)" stroke-width="0.5"/>
+            <circle cx="130" cy="130" r="110" fill="none" stroke="rgba(11,27,69,0.06)" stroke-width="0.5"/>
+            <circle cx="130" cy="130" r="20" fill="none" stroke="#0F52BA" stroke-width="1">
+              <animate attributeName="r" values="20;110;110" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.7;0;0" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="130" cy="130" r="20" fill="none" stroke="#0F52BA" stroke-width="1">
+              <animate attributeName="r" values="20;110;110" dur="3s" begin="1s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.7;0;0" dur="3s" begin="1s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="130" cy="130" r="20" fill="none" stroke="#0F52BA" stroke-width="1">
+              <animate attributeName="r" values="20;110;110" dur="3s" begin="2s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.7;0;0" dur="3s" begin="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="130" cy="130" r="5.5" fill="#0F52BA"/>
+            <circle cx="220" cy="70" r="2.5" fill="#0F52BA"/>
+            <circle cx="200" cy="180" r="2" fill="rgba(11,27,69,0.55)"/>
+            <circle cx="50" cy="90" r="2.5" fill="#0F52BA"/>
+            <circle cx="70" cy="220" r="2" fill="rgba(11,27,69,0.55)"/>
+            <circle cx="180" cy="40" r="2" fill="rgba(11,27,69,0.55)"/>
+            <circle cx="40" cy="180" r="2.5" fill="#0F52BA"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="pull-quote fade">Reach without measurement is folklore. Performance turns story into evidence.</p>
+    </div>
+  </section>
+
+  <section class="chapter" id="chapter-04">
+    <div class="container">
+      <header class="chapter-header fade">
+        <span class="chapter-num">Chapter 04</span>
+        <p class="eyebrow">Digital Presence</p>
+        <h2 class="display-2">Found by Google. <em>Cited</em> by AI.</h2>
+      </header>
+
+      <div class="chapter-grid reverse fade">
+        <div class="chapter-text">
+          <p class="body-text">Landing pages engineered for search engines and large language models, plus conversion surfaces with simulators and calculators that turn visibility into measurable leads.</p>
+          <ul class="services-list">
+            <li>SEO-optimised landing pages</li>
+            <li>LLM and AEO optimisation</li>
+            <li>Lead-capture simulators</li>
+            <li>Interactive calculators</li>
+          </ul>
+        </div>
+
+        <div class="chapter-visual">
+          <svg viewBox="0 0 300 180" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <g fill="rgba(11,27,69,0.22)">
+              <circle cx="30" cy="30" r="2"/><circle cx="75" cy="30" r="2"/><circle cx="120" cy="30" r="2"/><circle cx="165" cy="30" r="2"/><circle cx="210" cy="30" r="2"/><circle cx="255" cy="30" r="2"/>
+              <circle cx="30" cy="75" r="2"/><circle cx="75" cy="75" r="2"/><circle cx="165" cy="75" r="2"/><circle cx="210" cy="75" r="2"/><circle cx="255" cy="75" r="2"/>
+              <circle cx="30" cy="120" r="2"/><circle cx="75" cy="120" r="2"/><circle cx="120" cy="120" r="2"/><circle cx="210" cy="120" r="2"/><circle cx="255" cy="120" r="2"/>
+              <circle cx="30" cy="150" r="2"/><circle cx="75" cy="150" r="2"/><circle cx="120" cy="150" r="2"/><circle cx="165" cy="150" r="2"/><circle cx="210" cy="150" r="2"/><circle cx="255" cy="150" r="2"/>
+            </g>
+            <circle cx="120" cy="75" r="3.5" fill="#0F52BA">
+              <animate attributeName="opacity" values="0.3;1;1;0.3" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="165" cy="120" r="3.5" fill="#0F52BA">
+              <animate attributeName="opacity" values="0.3;1;1;0.3" dur="4s" begin="1.3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="210" cy="75" r="3.5" fill="#0F52BA" opacity="0.7"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="pull-quote fade">The new index isn't a SERP. It's the answer an LLM gives without prompting.</p>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="container">
+      <p class="eyebrow fade">Open for engagements</p>
+      <h2 class="display-3 fade">Let's redefine <em>communication</em>.</h2>
+      <p class="closing-body fade">For agencies, in-house comms desks and founders who need more than press lists. Project briefs, retainers and partnerships welcome.</p>
+      <a class="cta-button fade" href="https://wa.me/5515988211373?text=Quero%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20para%20ag%C3%AAncias%20de%20RP.%20">Start a brief →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wordmark">
+    <span class="wm-dot"></span>
+    <div class="wm-stack">
+      <span class="wm-name">Panoptic</span>
+      <span class="wm-sub">Intelligence</span>
+    </div>
+  </div>
+  <span class="footer-tag">2026</span>
+</footer>
+
+<script>
+(function() {
+  var fades = document.querySelectorAll('.fade');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -60px 0px' });
+  fades.forEach(function(el) { observer.observe(el); });
+  setTimeout(function() {
+    document.querySelectorAll('.hero .fade').forEach(function(el) { el.classList.add('in'); });
+  }, 100);
+})();
+</script>
+
+</body>
+</html>
